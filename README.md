@@ -178,4 +178,4 @@ For MongoDB, you can use MongoDB Atlas (cloud service) or set up your own MongoD
 
 ## License
 
-MIT# resume-builder
+MIT
