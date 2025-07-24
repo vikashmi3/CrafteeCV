@@ -1,0 +1,56 @@
+version: '3'
+
+services:
+  # MongoDB service
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - app-network
+
+  # Backend service
+  backend:
+    build: ./server
+    container_name: resume-backend
+    restart: always
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./server:/app
+      - ./server/uploads:/app/uploads
+    environment:
+      - FLASK_ENV=development
+      - MONGO_URI=mongodb://mongodb:27017/
+      - DB_NAME=resume_builder
+    depends_on:
+      - mongodb
+    networks:
+      - app-network
+
+  # Frontend service (optional, uncomment when needed)
+  # frontend:
+  #   build: ./client
+  #   container_name: resume-frontend
+  #   restart: always
+  #   ports:
+  #     - "3000:3000"
+  #   volumes:
+  #     - ./client:/app
+  #     - /app/node_modules
+  #   environment:
+  #     - NODE_ENV=development
+  #   depends_on:
+  #     - backend
+  #   networks:
+  #     - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mongodb_data:
