@@ -4,13 +4,16 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import './index.css';
 import { ResumeProvider } from './context/ResumeContext';
+import { AuthProvider } from './context/AuthContext';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
-      <ResumeProvider>
-        <App />
-      </ResumeProvider>
+      <AuthProvider>
+        <ResumeProvider>
+          <App />
+        </ResumeProvider>
+      </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
