@@ -82,6 +82,16 @@ const Header = () => {
             >
               Contact
             </Link>
+            <Link
+              to="/payment"
+              className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
+                isActive('/payment')
+                  ? 'bg-indigo-100 text-indigo-700 shadow-sm'
+                  : 'text-gray-600 hover:text-indigo-600 hover:bg-indigo-50'
+              }`}
+            >
+              Donate
+            </Link>
             
             {currentUser ? (
               <>

@@ -12,6 +12,7 @@ import Contact from './pages/Contact';
 import Terms from './pages/Terms';
 import PrivateRoute from './components/PrivateRoute';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import Payment from './pages/Payment';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/payment" element={<Payment />} />
         </Routes>
       </main>
       <Footer />
