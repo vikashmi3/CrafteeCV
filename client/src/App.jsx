@@ -11,6 +11,7 @@ import ResumePreview from './pages/ResumePreview';
 import Contact from './pages/Contact';
 import Terms from './pages/Terms';
 import PrivateRoute from './components/PrivateRoute';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           />
           <Route path="/contact" element={<Contact />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
       </main>
       <Footer />
