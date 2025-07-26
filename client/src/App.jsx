@@ -7,6 +7,9 @@ import Builder from './pages/Builder';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
+import ResumePreview from './pages/ResumePreview';
+import Contact from './pages/Contact';
+import Terms from './pages/Terms';
 import PrivateRoute from './components/PrivateRoute';
 
 function App() {
@@ -17,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/builder" element={<Builder />} />
+          <Route path="/preview" element={<ResumePreview />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route 
@@ -27,6 +31,8 @@ function App() {
               </PrivateRoute>
             } 
           />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/terms" element={<Terms />} />
         </Routes>
       </main>
       <Footer />
